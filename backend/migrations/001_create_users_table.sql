@@ -1,6 +1,7 @@
 CREATE TABLE users (
-    id BIGINT FOREIGN KEY,
-    emain VARCHAR(128) NOT NULL,
-    username varchar(64) NOT NULL,
-    password_hash text NOT NULL
+    id BIGSERIAL PRIMARY KEY,
+    email VARCHAR(128) UNIQUE NOT NULL,
+    username varchar(64) UNIQUE NOT NULL,
+    password_hash text NOT NULL,
+    create_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 )

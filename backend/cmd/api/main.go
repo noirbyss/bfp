@@ -16,7 +16,7 @@ var (
 )
 
 func main() {
-	if err := godotenv.Load("../../internal/config/.env"); err != nil {
+	if err := godotenv.Load("./.env"); err != nil {
 		log.Fatal("Error load .env file", err)
 	}
 
