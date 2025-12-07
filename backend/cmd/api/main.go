@@ -35,7 +35,7 @@ func printUser(user models.User) {
 	UserName: %s
 	Password: %s,
 	Created: %s
-	`, user.Id, user.Email, user.Username, user.Password_Hash, user.CreatedAt)
+	`, user.ID, user.Email, user.Username, user.PasswordHash, user.CreatedAt)
 }
 
 func generateHashPass(cost int, passwortd []byte) string {
@@ -53,9 +53,9 @@ func main() {
 	}
 
 	user := models.User{
-		Email:         "testjnjnuj3@gmail.com",
-		Username:      "Test3ewrwrwer",
-		Password_Hash: generateHashPass(10, []byte("12345678")),
+		Email:        "testjnjnuj3@gmail.com",
+		Username:     "Test3ewrwrwer",
+		PasswordHash: generateHashPass(10, []byte("12345678")),
 	}
 
 	db := database.UserRepository{
